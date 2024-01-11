@@ -1,6 +1,6 @@
 {
-    "name": "cab",
-    "short_name": "cab",
+    "name": "flutter_cab",
+    "short_name": "flutter_cab",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

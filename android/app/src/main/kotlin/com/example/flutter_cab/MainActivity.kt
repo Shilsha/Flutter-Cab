@@ -1,4 +1,4 @@
-package com.example.cab
+package com.example.flutter_cab
 
 import io.flutter.embedding.android.FlutterActivity
 
