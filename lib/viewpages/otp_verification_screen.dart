@@ -50,7 +50,11 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                 ),
                 Form(
                   key: _formKey,
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
                   child: PinCodeTextField(
+                    keyboardType: TextInputType.number,
+                    enableActiveFill: true,
+                    cursorColor: Colors.black,
                     appContext: context,
                     length: 6,
                     onChanged: (value) {
@@ -63,6 +67,9 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                     },
                     // You can customize the appearance of the input field
                     pinTheme: PinTheme(
+                        borderWidth: 1,
+                        activeBorderWidth: 1,
+                        inactiveBorderWidth: 1,
                         selectedFillColor: Colors.white,
                         shape: PinCodeFieldShape.box,
                         inactiveFillColor: Colors.white,
@@ -84,6 +91,9 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                     },
                   ),
                 ),
+                SizedBox(
+                  height: 10,
+                ),
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: 56,
@@ -96,11 +106,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(11)))),
                     onPressed: () {
-                      if (_otpController.text.isEmpty) {
-                        setState(() {});
-                      } else if (_otpController.text.isNotEmpty) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: Text('otp verified')));
+                      if (_formKey.currentState!.validate()) {
                         Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
