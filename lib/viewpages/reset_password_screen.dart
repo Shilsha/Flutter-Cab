@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_cab/viewpages/login_screen.dart';
+// ignore: depend_on_referenced_packages
+import 'package:google_fonts/google_fonts.dart';
 
 class ResetPasswordScreen extends StatefulWidget {
   const ResetPasswordScreen({super.key});
@@ -152,7 +154,12 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                                   MaterialPageRoute(
                                       builder: (context) => LoginScreen()));
                             },
-                            child: Text('Login'))
+                            child: Text(
+                              'Login',
+                              style: GoogleFonts.openSans(
+                                  fontWeight: FontWeight.w700,
+                                  color: const Color.fromRGBO(69, 30, 243, 1)),
+                            ))
                       ],
                     )
                   ],

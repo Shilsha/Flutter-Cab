@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_cab/viewpages/dashboard_sreen.dart';
+import 'package:flutter_cab/registration_screen.dart';
+// import 'package:flutter_cab/viewpages/dashboard_sreen.dart';
 import 'package:flutter_cab/viewpages/forgot_screen.dart';
+// ignore: depend_on_referenced_packages
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -138,11 +141,13 @@ class _LoginScreenState extends State<LoginScreen> {
                                 MaterialPageRoute(
                                     builder: (context) => ForgotPassword()));
                           },
-                          child: Text(
-                            'Forgot Password',
-                            style:
-                                TextStyle(color: Color.fromRGBO(0, 0, 0, 0.5)),
-                          ),
+                          child: Text('Forgot Password',
+                              style: GoogleFonts.openSans(
+                                  fontWeight: FontWeight.w700,
+                                  color: Color.fromRGBO(0, 0, 0, 0.5))
+                              //       TextStyle(color: Color.fromRGBO(0, 0, 0, 0.5)),
+
+                              ),
                         ),
                       ),
                     ],
@@ -163,10 +168,10 @@ class _LoginScreenState extends State<LoginScreen> {
                         if (_formKey.currentState!.validate()) {
                           ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(content: Text('Login secusess')));
-                          Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => DashboardScreen()));
+                          // Navigator.pushReplacement(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) => DashboardScreen()));
                         }
                       },
                       child: Text(
@@ -179,7 +184,20 @@ class _LoginScreenState extends State<LoginScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('Does not have account?'),
-                      TextButton(onPressed: () {}, child: Text('Signup'))
+                      TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        registration_screen()));
+                          },
+                          child: Text(
+                            'Signup',
+                            style: GoogleFonts.openSans(
+                                fontWeight: FontWeight.w700,
+                                color: const Color.fromRGBO(69, 30, 243, 1)),
+                          ))
                     ],
                   )
                 ]),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cab/viewpages/login_screen.dart';
 import 'package:flutter_cab/viewpages/otp_verification_screen.dart';
+// ignore: depend_on_referenced_packages
+import 'package:google_fonts/google_fonts.dart';
 
 class ForgotPassword extends StatefulWidget {
   const ForgotPassword({super.key});
@@ -121,7 +123,12 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                   MaterialPageRoute(
                                       builder: (context) => LoginScreen()));
                             },
-                            child: Text('Login'))
+                            child: Text(
+                              'Login',
+                              style: GoogleFonts.openSans(
+                                  fontWeight: FontWeight.w700,
+                                  color: const Color.fromRGBO(69, 30, 243, 1)),
+                            ))
                       ],
                     )
                   ],
