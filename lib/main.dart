@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_cab/splash_screen.dart';
+import 'package:flutter_cab/viewpages/home_screen.dart';
+import 'package:flutter_cab/viewpages/home_screen_1.dart';
+import 'package:flutter_cab/viewpages/one_way_trip.dart';
+import 'package:flutter_cab/viewpages/round_trip.dart';
 import 'package:flutter_cab/viewpages/splash_screen.dart';
 
 void main() {
@@ -18,7 +23,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const SplashSreen(),
+      home: const splash_screen(),
     );
   }
 }
