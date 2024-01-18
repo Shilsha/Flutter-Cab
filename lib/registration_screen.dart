@@ -2,7 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_cab/home_screen.dart';
+import 'package:flutter_cab/viewpages/login_screen.dart';
+// import 'package:flutter_cab/home_screen.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
@@ -52,7 +53,7 @@ class _registration_screenState extends State<registration_screen> {
 
     String? validateConfirmPassword(String? confirmPassword) {
       if (confirmPassword!.isEmpty) {
-        return '';
+        return 'Confirm Password is Required';
       }
       if (confirmPassword != passwordController.text) {
         return 'Password do not Match';
@@ -239,7 +240,7 @@ class _registration_screenState extends State<registration_screen> {
                           Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const home_screen()));
+                                  builder: (context) => const LoginScreen()));
                         }
                       },
                       child: Container(
@@ -258,6 +259,9 @@ class _registration_screenState extends State<registration_screen> {
                         )),
                       ),
                     ),
+                    SizedBox(
+                      height: 10,
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -268,7 +272,12 @@ class _registration_screenState extends State<registration_screen> {
                               color: const Color.fromRGBO(0, 0, 0, 0.5)),
                         ),
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => LoginScreen()));
+                          },
                           child: Text(
                             ' Login',
                             style: GoogleFonts.openSans(
