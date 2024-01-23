@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_cab/registration_screen.dart';
 // import 'package:flutter_cab/viewpages/dashboard_sreen.dart';
 import 'package:flutter_cab/viewpages/forgot_screen.dart';
+import 'package:flutter_cab/viewpages/vendor-side/vendor_dashboard.dart';
 // ignore: depend_on_referenced_packages
 import 'package:google_fonts/google_fonts.dart';
 
@@ -168,10 +169,11 @@ class _LoginScreenState extends State<LoginScreen> {
                         if (_formKey.currentState!.validate()) {
                           ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(content: Text('Login secusess')));
-                          // Navigator.pushReplacement(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DashboardScreen()));
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      VendorDashboardScreen()));
                         }
                       },
                       child: Text(
