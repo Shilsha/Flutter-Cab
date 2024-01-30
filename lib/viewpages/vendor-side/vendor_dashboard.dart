@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cab/custom_widget/barChart_modal.dart';
 import 'package:flutter_cab/viewpages/login_screen.dart';
+import 'package:flutter_cab/viewpages/vendor-side/add_vehicle_screen.dart';
+import 'package:flutter_cab/viewpages/vendor-side/booking_management_screen.dart';
 import 'package:flutter_cab/viewpages/vendor-side/profile_screen.dart';
 import 'package:flutter_cab/viewpages/vendor-side/rental_management_screen.dart';
 import 'package:flutter_cab/viewpages/vendor-side/rental_package_screen.dart';
@@ -121,6 +123,286 @@ class _VendorDashboardScreenState extends State<VendorDashboardScreen> {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(children: [
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  Card(
+                    color: Colors.white,
+                    surfaceTintColor: Colors.white,
+                    elevation: 2,
+                    shadowColor: Colors.white,
+                    child: Container(
+                      height: 150,
+                      width: 260,
+                      child: Padding(
+                        padding:
+                            const EdgeInsets.only(left: 15, right: 10, top: 15),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Vehicles',
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color.fromRGBO(123, 30, 52, 1)),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Table(columnWidths: {
+                                  0: FixedColumnWidth(90),
+                                  1: FixedColumnWidth(40)
+                                }, children: [
+                                  TableRow(children: [
+                                    Text(
+                                      'Total',
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
+                                    ),
+                                    Text(
+                                      '4',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
+                                    )
+                                  ]),
+                                  TableRow(children: [
+                                    Text(
+                                      'Available',
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
+                                    ),
+                                    Text(
+                                      '1',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
+                                    )
+                                  ]),
+                                  TableRow(children: [
+                                    Text(
+                                      'Booked',
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
+                                    ),
+                                    Text(
+                                      '3',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
+                                    )
+                                  ])
+                                ]),
+                                Container(
+                                  child: Image.asset(
+                                    'assets/images/vehicle.png',
+                                    width: 100,
+                                    height: 100,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Card(
+                    color: Colors.white,
+                    surfaceTintColor: Colors.white,
+                    elevation: 2,
+                    shadowColor: Colors.white,
+                    child: Container(
+                      height: 150,
+                      width: 260,
+                      child: Padding(
+                        padding:
+                            const EdgeInsets.only(left: 15, right: 10, top: 15),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Vehicles',
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color.fromRGBO(123, 30, 52, 1)),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Table(columnWidths: {
+                                  0: FixedColumnWidth(90),
+                                  1: FixedColumnWidth(40)
+                                }, children: [
+                                  TableRow(children: [
+                                    Text(
+                                      'Total',
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
+                                    ),
+                                    Text(
+                                      '4',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
+                                    )
+                                  ]),
+                                  TableRow(children: [
+                                    Text(
+                                      'Available',
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
+                                    ),
+                                    Text(
+                                      '1',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
+                                    )
+                                  ]),
+                                  TableRow(children: [
+                                    Text(
+                                      'Booked',
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
+                                    ),
+                                    Text(
+                                      '3',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
+                                    )
+                                  ])
+                                ]),
+                                Container(
+                                  child: Image.asset(
+                                    'assets/images/vehicle.png',
+                                    width: 100,
+                                    height: 100,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Card(
+                    color: Colors.white,
+                    surfaceTintColor: Colors.white,
+                    elevation: 2,
+                    shadowColor: Colors.white,
+                    child: Container(
+                      height: 150,
+                      width: 260,
+                      child: Padding(
+                        padding:
+                            const EdgeInsets.only(left: 15, right: 10, top: 15),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Vehicles',
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color.fromRGBO(123, 30, 52, 1)),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Table(columnWidths: {
+                                  0: FixedColumnWidth(90),
+                                  1: FixedColumnWidth(40)
+                                }, children: [
+                                  TableRow(children: [
+                                    Text(
+                                      'Total',
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
+                                    ),
+                                    Text(
+                                      '4',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
+                                    )
+                                  ]),
+                                  TableRow(children: [
+                                    Text(
+                                      'Available',
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
+                                    ),
+                                    Text(
+                                      '1',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
+                                    )
+                                  ]),
+                                  TableRow(children: [
+                                    Text(
+                                      'Booked',
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
+                                    ),
+                                    Text(
+                                      '3',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
+                                    )
+                                  ])
+                                ]),
+                                Container(
+                                  child: Image.asset(
+                                    'assets/images/vehicle.png',
+                                    width: 100,
+                                    height: 100,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
             SizedBox(
               height: 160,
               child: ListView(scrollDirection: Axis.horizontal, children: [
@@ -134,8 +416,8 @@ class _VendorDashboardScreenState extends State<VendorDashboardScreen> {
                         boxShadow: [
                           BoxShadow(
                             color: Color.fromRGBO(123, 30, 52, 1),
-                            blurRadius: 4,
-                            offset: Offset(4, 4), // Shadow position
+                            blurRadius: 1,
+                            offset: Offset(1, 1), // Shadow position
                           ),
                         ]),
                     // color: Color.fromRGBO(234, 233, 226, 1),
@@ -233,7 +515,7 @@ class _VendorDashboardScreenState extends State<VendorDashboardScreen> {
                   width: 10,
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(5.0),
                   child: Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(25),
@@ -241,8 +523,8 @@ class _VendorDashboardScreenState extends State<VendorDashboardScreen> {
                         boxShadow: [
                           BoxShadow(
                             color: Color.fromRGBO(123, 30, 52, 1),
-                            blurRadius: 4,
-                            offset: Offset(4, 4), // Shadow position
+                            blurRadius: 1,
+                            offset: Offset(1, 1), // Shadow position
                           ),
                         ]),
                     width: 260,
@@ -354,8 +636,8 @@ class _VendorDashboardScreenState extends State<VendorDashboardScreen> {
                         boxShadow: [
                           BoxShadow(
                             color: Color.fromRGBO(123, 30, 52, 1),
-                            blurRadius: 4,
-                            offset: Offset(4, 4), // Shadow position
+                            blurRadius: 1,
+                            offset: Offset(1, 1), // Shadow position
                           ),
                         ]),
                     // color: Color.fromRGBO(234, 233, 226, 1),
@@ -465,8 +747,8 @@ class _VendorDashboardScreenState extends State<VendorDashboardScreen> {
                   boxShadow: [
                     BoxShadow(
                       color: Color.fromRGBO(123, 30, 52, 1),
-                      blurRadius: 4,
-                      offset: Offset(4, 4), // Shadow position
+                      blurRadius: 1,
+                      offset: Offset(1, 1), // Shadow position
                     ),
                   ]),
               width: MediaQuery.of(context).size.width,
@@ -518,8 +800,8 @@ class _VendorDashboardScreenState extends State<VendorDashboardScreen> {
                   boxShadow: [
                     BoxShadow(
                       color: Color.fromRGBO(123, 30, 52, 1),
-                      blurRadius: 4,
-                      offset: Offset(4, 4), // Shadow position
+                      blurRadius: 2,
+                      offset: Offset(1, 1), // Shadow position
                     ),
                   ]),
               child: Column(
@@ -889,8 +1171,8 @@ class _VendorDashboardScreenState extends State<VendorDashboardScreen> {
                     boxShadow: [
                       BoxShadow(
                         color: Color.fromRGBO(123, 30, 52, 1),
-                        blurRadius: 4,
-                        offset: Offset(4, 4), // Shadow position
+                        blurRadius: 2,
+                        offset: Offset(1, 1), // Shadow position
                       ),
                     ]),
                 width: MediaQuery.of(context).size.width,
@@ -940,6 +1222,7 @@ class _VendorDashboardScreenState extends State<VendorDashboardScreen> {
               ),
               Divider(),
               ListTile(
+                splashColor: Colors.white,
                 leading: Icon(
                   Icons.dashboard,
                   color: Color.fromRGBO(129, 0, 30, 1),
@@ -956,6 +1239,7 @@ class _VendorDashboardScreenState extends State<VendorDashboardScreen> {
                 },
               ),
               ListTile(
+                splashColor: Colors.white,
                 leading: Icon(
                   Icons.car_rental,
                 ),
@@ -1001,6 +1285,10 @@ class _VendorDashboardScreenState extends State<VendorDashboardScreen> {
                 ),
                 onTap: () {
                   Navigator.pop(context);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => BookingManagementScreen()));
                 },
               ),
               ListTile(
@@ -1015,6 +1303,10 @@ class _VendorDashboardScreenState extends State<VendorDashboardScreen> {
                 ),
                 onTap: () {
                   Navigator.pop(context);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => AddVehicleScreen()));
                 },
               ),
               ListTile(

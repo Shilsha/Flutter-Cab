@@ -7,7 +7,7 @@ class MyData extends DataTableSource {
   final List<Map<String, dynamic>> _data = List.generate(
       200,
       (index) => {
-            "name": "Name $index",
+            "name": "Name ",
             "hour": index,
             "km": index,
             "created_date": DateTime.now(),
@@ -44,17 +44,220 @@ class MyData extends DataTableSource {
               icon: Icon(Icons.more_vert_outlined),
               itemBuilder: (context) {
                 return [
-                  const PopupMenuItem<int>(
+                  PopupMenuItem<int>(
                     value: 0,
-                    child: Text("View"),
+                    child: ListTile(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      title: Text('View'),
+                      leading: Icon(Icons.remove_red_eye),
+                    ),
                   ),
-                  const PopupMenuItem<int>(
+                  PopupMenuItem<int>(
                     value: 1,
-                    child: Text("Edit"),
+                    child: ListTile(
+                      onTap: () {
+                        Navigator.pop(context);
+                        showDialog(
+                            context: context,
+                            builder: (context) => AlertDialog(
+                                  surfaceTintColor: Colors.white,
+                                  title: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text('Edit Rental Package'),
+                                      Container(
+                                        padding: EdgeInsets.only(left: 22),
+                                        child: IconButton(
+                                            onPressed: () {
+                                              Navigator.pop(context);
+                                            },
+                                            icon: Icon(Icons.close_rounded)),
+                                      )
+                                    ],
+                                  ),
+                                  content: SingleChildScrollView(
+                                    child: Container(
+                                      width: MediaQuery.of(context).size.width,
+                                      // height: 400,
+                                      child: Form(
+                                          child: Column(
+                                        children: [
+                                          SizedBox(
+                                            height: 15,
+                                          ),
+                                          Container(
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width,
+                                              child: TextFormField(
+                                                decoration: InputDecoration(
+                                                    labelText: 'Rental Name',
+                                                    contentPadding:
+                                                        EdgeInsets.symmetric(
+                                                            vertical: 10,
+                                                            horizontal: 10),
+                                                    fillColor: Colors.white,
+                                                    filled: true,
+                                                    border:
+                                                        OutlineInputBorder()),
+                                              )),
+                                          SizedBox(
+                                            height: 15,
+                                          ),
+                                          Container(
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width,
+                                              child: TextFormField(
+                                                decoration: InputDecoration(
+                                                    labelText: 'Rental Hours',
+                                                    contentPadding:
+                                                        EdgeInsets.symmetric(
+                                                            vertical: 10,
+                                                            horizontal: 10),
+                                                    fillColor: Colors.white,
+                                                    filled: true,
+                                                    border:
+                                                        OutlineInputBorder()),
+                                              )),
+                                          SizedBox(
+                                            height: 15,
+                                          ),
+                                          Container(
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width,
+                                              child: TextFormField(
+                                                decoration: InputDecoration(
+                                                    labelText: 'Rental KM',
+                                                    contentPadding:
+                                                        EdgeInsets.symmetric(
+                                                            vertical: 10,
+                                                            horizontal: 10),
+                                                    fillColor: Colors.white,
+                                                    filled: true,
+                                                    border:
+                                                        OutlineInputBorder()),
+                                              )),
+                                          SizedBox(
+                                            height: 15,
+                                          ),
+                                          Container(
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width,
+                                              child: TextFormField(
+                                                decoration: InputDecoration(
+                                                    labelText: 'KM/Price',
+                                                    contentPadding:
+                                                        EdgeInsets.symmetric(
+                                                            vertical: 10,
+                                                            horizontal: 10),
+                                                    fillColor: Colors.white,
+                                                    filled: true,
+                                                    border:
+                                                        OutlineInputBorder()),
+                                              )),
+                                          SizedBox(
+                                            height: 15,
+                                          ),
+                                          Container(
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width,
+                                              child: TextFormField(
+                                                decoration: InputDecoration(
+                                                    labelText: 'Min/Fare',
+                                                    contentPadding:
+                                                        EdgeInsets.symmetric(
+                                                            vertical: 10,
+                                                            horizontal: 10),
+                                                    fillColor: Colors.white,
+                                                    filled: true,
+                                                    border:
+                                                        OutlineInputBorder()),
+                                              )),
+                                          SizedBox(
+                                            height: 15,
+                                          ),
+                                          Container(
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width,
+                                              child: TextFormField(
+                                                decoration: InputDecoration(
+                                                    labelText: 'Base Location',
+                                                    contentPadding:
+                                                        EdgeInsets.symmetric(
+                                                            vertical: 10,
+                                                            horizontal: 10),
+                                                    fillColor: Colors.white,
+                                                    filled: true,
+                                                    border:
+                                                        OutlineInputBorder()),
+                                              )),
+                                          SizedBox(
+                                            height: 20,
+                                          ),
+                                          Container(
+                                            width: MediaQuery.of(context)
+                                                .size
+                                                .width,
+                                            height: 56,
+                                            child: ElevatedButton(
+                                              style: ButtonStyle(
+                                                  backgroundColor:
+                                                      MaterialStatePropertyAll(
+                                                          Color.fromRGBO(
+                                                              123, 30, 52, 1)),
+                                                  shape: MaterialStateProperty.all<
+                                                          RoundedRectangleBorder>(
+                                                      RoundedRectangleBorder(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      11)))),
+                                              onPressed: () {
+                                                // if (_formKey.currentState!.validate()) {
+                                                //   ScaffoldMessenger.of(context).showSnackBar(
+                                                //       SnackBar(content: Text('Login secusess')));
+                                                //   Navigator.pushReplacement(
+                                                //       context,
+                                                //       MaterialPageRoute(
+                                                //           builder: (context) =>
+                                                //               VendorDashboardScreen()));
+                                                // }
+                                              },
+                                              child: Text(
+                                                'Edit Rental Package',
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 16),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      )),
+                                    ),
+                                  ),
+                                ));
+                      },
+                      title: Text('edit'),
+                      leading: Icon(Icons.edit_document),
+                    ),
                   ),
-                  const PopupMenuItem<int>(
+                  PopupMenuItem<int>(
                     value: 2,
-                    child: Text("Delete"),
+                    child: ListTile(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      title: Text('delete'),
+                      leading: Icon(Icons.delete),
+                    ),
                   ),
                 ];
               },

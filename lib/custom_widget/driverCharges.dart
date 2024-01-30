@@ -476,33 +476,35 @@ class _DriverChargesScreenState extends State<DriverChargesScreen> {
                                                   color: Colors.white),
                                             )),
                                       ),
-                                      Padding(
-                                        padding: const EdgeInsets.only(
-                                            left: 30,
-                                            top: 10,
-                                            right: 10,
-                                            bottom: 10),
-                                        child: ElevatedButton(
-                                            style: ButtonStyle(
-                                                backgroundColor:
-                                                    MaterialStatePropertyAll(
-                                                        Color.fromRGBO(
-                                                            123, 30, 52, 1)),
-                                                shape: MaterialStateProperty.all<
-                                                        RoundedRectangleBorder>(
-                                                    RoundedRectangleBorder(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(
-                                                                    11)))),
-                                            onPressed: () {
-                                              Navigator.of(context).pop();
-                                            },
-                                            child: Text(
-                                              'BACK',
-                                              style: TextStyle(
-                                                  color: Colors.white),
-                                            )),
+                                      Expanded(
+                                        child: Align(
+                                          alignment: Alignment.centerRight,
+                                          child: Container(
+                                            padding: EdgeInsets.only(right: 10),
+                                            width: 100,
+                                            child: ElevatedButton(
+                                                style: ButtonStyle(
+                                                    backgroundColor:
+                                                        MaterialStatePropertyAll(
+                                                            Color.fromRGBO(123,
+                                                                30, 52, 1)),
+                                                    shape: MaterialStateProperty.all<
+                                                            RoundedRectangleBorder>(
+                                                        RoundedRectangleBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        11)))),
+                                                onPressed: () {
+                                                  Navigator.of(context).pop();
+                                                },
+                                                child: Text(
+                                                  'BACK',
+                                                  style: TextStyle(
+                                                      color: Colors.white),
+                                                )),
+                                          ),
+                                        ),
                                       )
                                     ],
                                   ),
@@ -519,33 +521,39 @@ class _DriverChargesScreenState extends State<DriverChargesScreen> {
                     ),
                   ),
                 ),
-                Container(
-                  padding: EdgeInsets.only(left: 160),
-                  child: TextButton(
-                    style: ButtonStyle(
-                        surfaceTintColor: MaterialStatePropertyAll(
-                            Color.fromRGBO(123, 30, 52, 1)),
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                Expanded(
+                  child: Align(
+                    alignment: Alignment.centerRight,
+                    child: Container(
+                      width: 100,
+                      padding: EdgeInsets.only(right: 10),
+                      child: TextButton(
+                        style: ButtonStyle(
+                            surfaceTintColor: MaterialStatePropertyAll(
+                                Color.fromRGBO(123, 30, 52, 1)),
+                            shape: MaterialStateProperty.all<
+                                    RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                                     side: BorderSide(
                                         width: 1,
                                         color: Color.fromRGBO(123, 30, 52, 1)),
                                     borderRadius: BorderRadius.circular(11)))),
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.delete,
-                          color: Color.fromRGBO(123, 30, 52, 1),
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.delete,
+                              color: Color.fromRGBO(123, 30, 52, 1),
+                            ),
+                            Text(
+                              'Delete',
+                              style: TextStyle(
+                                  color: Color.fromRGBO(123, 30, 52, 1)),
+                            )
+                          ],
                         ),
-                        Text(
-                          'Delete',
-                          style:
-                              TextStyle(color: Color.fromRGBO(123, 30, 52, 1)),
-                        )
-                      ],
+                        onPressed: () => {},
+                      ),
                     ),
-                    onPressed: () => {},
                   ),
                 )
               ],

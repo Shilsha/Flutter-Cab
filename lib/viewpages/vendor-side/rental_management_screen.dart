@@ -59,24 +59,29 @@ class _RentalManagementScreenState extends State<RentalManagementScreen> {
                   ),
                 ),
               ),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.white,
-                ),
-                width: 80,
-                height: 35,
-                child: const Row(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(left: 10),
-                      child: Icon(Icons.filter_alt_outlined),
+              Expanded(
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white,
                     ),
-                    Text(
-                      'ALL',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    )
-                  ],
+                    width: 80,
+                    height: 35,
+                    child: const Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(left: 10),
+                          child: Icon(Icons.filter_alt_outlined),
+                        ),
+                        Text(
+                          'ALL',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
+                  ),
                 ),
               ),
             ],
