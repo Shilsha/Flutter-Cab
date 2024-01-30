@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_cab/viewpages/one_way_trip.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class home_screen extends StatefulWidget {
@@ -106,27 +107,33 @@ class _home_screenState extends State<home_screen> {
               SizedBox(
                 height: 35,
               ),
-              Container(
-                height: MediaQuery.of(context).size.height / 4.2,
-                width: MediaQuery.of(context).size.width / 2.5,
-                decoration: BoxDecoration(
-                    color: Color.fromRGBO(255, 255, 255, 1),
-                    borderRadius: BorderRadius.circular(15)),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Image.asset(
-                      'assets/images/ride_kCab.png',
-                      height: 65,
-                    ),
-                    Text(
-                      'Ride',
-                      style: GoogleFonts.openSans(
-                          fontWeight: FontWeight.w300,
-                          fontSize: 13,
-                          color: Color.fromRGBO(123, 30, 52, 1)),
-                    )
-                  ],
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => one_way_trip()));
+                },
+                child: Container(
+                  height: MediaQuery.of(context).size.height / 4.2,
+                  width: MediaQuery.of(context).size.width / 2.5,
+                  decoration: BoxDecoration(
+                      color: Color.fromRGBO(255, 255, 255, 1),
+                      borderRadius: BorderRadius.circular(15)),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Image.asset(
+                        'assets/images/ride_kCab.png',
+                        height: 65,
+                      ),
+                      Text(
+                        'Ride',
+                        style: GoogleFonts.openSans(
+                            fontWeight: FontWeight.w300,
+                            fontSize: 13,
+                            color: Color.fromRGBO(123, 30, 52, 1)),
+                      )
+                    ],
+                  ),
                 ),
               ),
               SizedBox(
