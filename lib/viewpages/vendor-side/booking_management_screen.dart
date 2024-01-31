@@ -1,3 +1,4 @@
+import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cab/custom_widget/booking_management_data.dart';
 
@@ -11,15 +12,6 @@ class BookingManagementScreen extends StatefulWidget {
 
 class _BookingManagementScreenState extends State<BookingManagementScreen> {
   final DataTableSource data = BookinMyData();
-  final List<String> options = [
-    'UP Comming Rides',
-    'On-going Rides',
-    'Completed Rides',
-    'Cancell Rides',
-    'Reschedules Rides'
-  ];
-
-  String selectedOption = 'UP Comming Rides';
 
   TextEditingController _searchData = TextEditingController();
   @override
@@ -34,6 +26,7 @@ class _BookingManagementScreenState extends State<BookingManagementScreen> {
         child: Container(
             child: ListView(children: <Widget>[
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
                 width: MediaQuery.of(context).size.width * 0.4,
@@ -63,43 +56,36 @@ class _BookingManagementScreenState extends State<BookingManagementScreen> {
                   ),
                 ),
               ),
-              Expanded(
-                child: Align(
-                  alignment: Alignment.centerRight,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.white,
-                    ),
-                    width: MediaQuery.of(context).size.width * 0.6,
-                    height: 35,
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(left: 5),
-                          child: Icon(Icons.filter_alt_outlined),
-                        ),
-                        Container(
-                          // padding: EdgeInsets.only(left: 5),
-                          child: DropdownButton<String>(
-                              value: selectedOption,
-                              hint: Text('dsdsddsd'),
-                              items: options.map<DropdownMenuItem<String>>(
-                                  (String value) {
-                                return DropdownMenuItem<String>(
-                                  value: value,
-                                  child: Text(value),
-                                );
-                              }).toList(),
-                              onChanged: (String? value) {
-                                setState(() {
-                                  selectedOption = value!;
-                                });
-                              }),
-                        ),
-                      ],
+              Container(
+                width: MediaQuery.of(context).size.width * 0.54,
+                height: 40,
+                child: DropdownSearch<String>(
+                  popupProps: PopupProps.menu(
+                    showSelectedItems: true,
+                    disabledItemFn: (String s) => s.startsWith('I'),
+                  ),
+                  items: [
+                    'UP Comming Rides',
+                    'On-going Rides',
+                    'Completed Rides',
+                    'Cancell Rides',
+                    'Reschedules Rides'
+                  ],
+                  dropdownDecoratorProps: DropDownDecoratorProps(
+                    dropdownSearchDecoration: InputDecoration(
+                      contentPadding:
+                          EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      prefixIcon: Icon(Icons.filter_alt_outlined),
+                      filled: true,
+                      fillColor: Colors.white,
+                      // labelText: "Select Doors",
+                      hintText: "Filter",
                     ),
                   ),
+                  onChanged: print,
+                  // selectedItem: "Brazil",
                 ),
               ),
             ],

@@ -3,6 +3,7 @@ import 'package:flutter_cab/custom_widget/barChart_modal.dart';
 import 'package:flutter_cab/viewpages/login_screen.dart';
 import 'package:flutter_cab/viewpages/vendor-side/add_vehicle_screen.dart';
 import 'package:flutter_cab/viewpages/vendor-side/booking_management_screen.dart';
+import 'package:flutter_cab/viewpages/vendor-side/cab_allocate_screen.dart';
 import 'package:flutter_cab/viewpages/vendor-side/profile_screen.dart';
 import 'package:flutter_cab/viewpages/vendor-side/rental_management_screen.dart';
 import 'package:flutter_cab/viewpages/vendor-side/rental_package_screen.dart';
@@ -123,286 +124,291 @@ class _VendorDashboardScreenState extends State<VendorDashboardScreen> {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(children: [
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  Card(
-                    color: Colors.white,
-                    surfaceTintColor: Colors.white,
-                    elevation: 2,
-                    shadowColor: Colors.white,
-                    child: Container(
-                      height: 150,
-                      width: 260,
-                      child: Padding(
-                        padding:
-                            const EdgeInsets.only(left: 15, right: 10, top: 15),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Vehicles',
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color: Color.fromRGBO(123, 30, 52, 1)),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Table(columnWidths: {
-                                  0: FixedColumnWidth(90),
-                                  1: FixedColumnWidth(40)
-                                }, children: [
-                                  TableRow(children: [
-                                    Text(
-                                      'Total',
-                                      textAlign: TextAlign.left,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
-                                    ),
-                                    Text(
-                                      '4',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
-                                    )
-                                  ]),
-                                  TableRow(children: [
-                                    Text(
-                                      'Available',
-                                      textAlign: TextAlign.left,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
-                                    ),
-                                    Text(
-                                      '1',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
-                                    )
-                                  ]),
-                                  TableRow(children: [
-                                    Text(
-                                      'Booked',
-                                      textAlign: TextAlign.left,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
-                                    ),
-                                    Text(
-                                      '3',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
-                                    )
-                                  ])
-                                ]),
-                                Container(
-                                  child: Image.asset(
-                                    'assets/images/vehicle.png',
-                                    width: 100,
-                                    height: 100,
-                                  ),
-                                )
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Card(
-                    color: Colors.white,
-                    surfaceTintColor: Colors.white,
-                    elevation: 2,
-                    shadowColor: Colors.white,
-                    child: Container(
-                      height: 150,
-                      width: 260,
-                      child: Padding(
-                        padding:
-                            const EdgeInsets.only(left: 15, right: 10, top: 15),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Vehicles',
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color: Color.fromRGBO(123, 30, 52, 1)),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Table(columnWidths: {
-                                  0: FixedColumnWidth(90),
-                                  1: FixedColumnWidth(40)
-                                }, children: [
-                                  TableRow(children: [
-                                    Text(
-                                      'Total',
-                                      textAlign: TextAlign.left,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
-                                    ),
-                                    Text(
-                                      '4',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
-                                    )
-                                  ]),
-                                  TableRow(children: [
-                                    Text(
-                                      'Available',
-                                      textAlign: TextAlign.left,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
-                                    ),
-                                    Text(
-                                      '1',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
-                                    )
-                                  ]),
-                                  TableRow(children: [
-                                    Text(
-                                      'Booked',
-                                      textAlign: TextAlign.left,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
-                                    ),
-                                    Text(
-                                      '3',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
-                                    )
-                                  ])
-                                ]),
-                                Container(
-                                  child: Image.asset(
-                                    'assets/images/vehicle.png',
-                                    width: 100,
-                                    height: 100,
-                                  ),
-                                )
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Card(
-                    color: Colors.white,
-                    surfaceTintColor: Colors.white,
-                    elevation: 2,
-                    shadowColor: Colors.white,
-                    child: Container(
-                      height: 150,
-                      width: 260,
-                      child: Padding(
-                        padding:
-                            const EdgeInsets.only(left: 15, right: 10, top: 15),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Vehicles',
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color: Color.fromRGBO(123, 30, 52, 1)),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Table(columnWidths: {
-                                  0: FixedColumnWidth(90),
-                                  1: FixedColumnWidth(40)
-                                }, children: [
-                                  TableRow(children: [
-                                    Text(
-                                      'Total',
-                                      textAlign: TextAlign.left,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
-                                    ),
-                                    Text(
-                                      '4',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
-                                    )
-                                  ]),
-                                  TableRow(children: [
-                                    Text(
-                                      'Available',
-                                      textAlign: TextAlign.left,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
-                                    ),
-                                    Text(
-                                      '1',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
-                                    )
-                                  ]),
-                                  TableRow(children: [
-                                    Text(
-                                      'Booked',
-                                      textAlign: TextAlign.left,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
-                                    ),
-                                    Text(
-                                      '3',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Color.fromRGBO(0, 0, 0, 0.5)),
-                                    )
-                                  ])
-                                ]),
-                                Container(
-                                  child: Image.asset(
-                                    'assets/images/vehicle.png',
-                                    width: 100,
-                                    height: 100,
-                                  ),
-                                )
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            ///////////card//////////////////
+
+            // SingleChildScrollView(
+            //   scrollDirection: Axis.horizontal,
+            //   child: Row(
+            //     children: [
+            //       Card(
+            //         color: Colors.white,
+            //         surfaceTintColor: Colors.white,
+            //         elevation: 2,
+            //         shadowColor: Colors.white,
+            //         child: Container(
+            //           height: 150,
+            //           width: 260,
+            //           child: Padding(
+            //             padding:
+            //                 const EdgeInsets.only(left: 15, right: 10, top: 15),
+            //             child: Column(
+            //               crossAxisAlignment: CrossAxisAlignment.start,
+            //               children: [
+            //                 Text(
+            //                   'Vehicles',
+            //                   style: TextStyle(
+            //                       fontSize: 18,
+            //                       fontWeight: FontWeight.bold,
+            //                       color: Color.fromRGBO(123, 30, 52, 1)),
+            //                 ),
+            //                 Row(
+            //                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //                   children: [
+            //                     Table(columnWidths: {
+            //                       0: FixedColumnWidth(90),
+            //                       1: FixedColumnWidth(40)
+            //                     }, children: [
+            //                       TableRow(children: [
+            //                         Text(
+            //                           'Total',
+            //                           textAlign: TextAlign.left,
+            //                           style: TextStyle(
+            //                               fontWeight: FontWeight.bold,
+            //                               color: Color.fromRGBO(0, 0, 0, 0.5)),
+            //                         ),
+            //                         Text(
+            //                           '4',
+            //                           textAlign: TextAlign.center,
+            //                           style: TextStyle(
+            //                               fontWeight: FontWeight.bold,
+            //                               color: Color.fromRGBO(0, 0, 0, 0.5)),
+            //                         )
+            //                       ]),
+            //                       TableRow(children: [
+            //                         Text(
+            //                           'Available',
+            //                           textAlign: TextAlign.left,
+            //                           style: TextStyle(
+            //                               fontWeight: FontWeight.bold,
+            //                               color: Color.fromRGBO(0, 0, 0, 0.5)),
+            //                         ),
+            //                         Text(
+            //                           '1',
+            //                           textAlign: TextAlign.center,
+            //                           style: TextStyle(
+            //                               fontWeight: FontWeight.bold,
+            //                               color: Color.fromRGBO(0, 0, 0, 0.5)),
+            //                         )
+            //                       ]),
+            //                       TableRow(children: [
+            //                         Text(
+            //                           'Booked',
+            //                           textAlign: TextAlign.left,
+            //                           style: TextStyle(
+            //                               fontWeight: FontWeight.bold,
+            //                               color: Color.fromRGBO(0, 0, 0, 0.5)),
+            //                         ),
+            //                         Text(
+            //                           '3',
+            //                           textAlign: TextAlign.center,
+            //                           style: TextStyle(
+            //                               fontWeight: FontWeight.bold,
+            //                               color: Color.fromRGBO(0, 0, 0, 0.5)),
+            //                         )
+            //                       ])
+            //                     ]),
+            //                     Container(
+            //                       child: Image.asset(
+            //                         'assets/images/vehicle.png',
+            //                         width: 100,
+            //                         height: 100,
+            //                       ),
+            //                     )
+            //                   ],
+            //                 ),
+            //               ],
+            //             ),
+            //           ),
+            //         ),
+            //       ),
+            //       Card(
+            //         color: Colors.white,
+            //         surfaceTintColor: Colors.white,
+            //         elevation: 2,
+            //         shadowColor: Colors.white,
+            //         child: Container(
+            //           height: 150,
+            //           width: 260,
+            //           child: Padding(
+            //             padding:
+            //                 const EdgeInsets.only(left: 15, right: 10, top: 15),
+            //             child: Column(
+            //               crossAxisAlignment: CrossAxisAlignment.start,
+            //               children: [
+            //                 Text(
+            //                   'Vehicles',
+            //                   style: TextStyle(
+            //                       fontSize: 18,
+            //                       fontWeight: FontWeight.bold,
+            //                       color: Color.fromRGBO(123, 30, 52, 1)),
+            //                 ),
+            //                 Row(
+            //                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //                   children: [
+            //                     Table(columnWidths: {
+            //                       0: FixedColumnWidth(90),
+            //                       1: FixedColumnWidth(40)
+            //                     }, children: [
+            //                       TableRow(children: [
+            //                         Text(
+            //                           'Total',
+            //                           textAlign: TextAlign.left,
+            //                           style: TextStyle(
+            //                               fontWeight: FontWeight.bold,
+            //                               color: Color.fromRGBO(0, 0, 0, 0.5)),
+            //                         ),
+            //                         Text(
+            //                           '4',
+            //                           textAlign: TextAlign.center,
+            //                           style: TextStyle(
+            //                               fontWeight: FontWeight.bold,
+            //                               color: Color.fromRGBO(0, 0, 0, 0.5)),
+            //                         )
+            //                       ]),
+            //                       TableRow(children: [
+            //                         Text(
+            //                           'Available',
+            //                           textAlign: TextAlign.left,
+            //                           style: TextStyle(
+            //                               fontWeight: FontWeight.bold,
+            //                               color: Color.fromRGBO(0, 0, 0, 0.5)),
+            //                         ),
+            //                         Text(
+            //                           '1',
+            //                           textAlign: TextAlign.center,
+            //                           style: TextStyle(
+            //                               fontWeight: FontWeight.bold,
+            //                               color: Color.fromRGBO(0, 0, 0, 0.5)),
+            //                         )
+            //                       ]),
+            //                       TableRow(children: [
+            //                         Text(
+            //                           'Booked',
+            //                           textAlign: TextAlign.left,
+            //                           style: TextStyle(
+            //                               fontWeight: FontWeight.bold,
+            //                               color: Color.fromRGBO(0, 0, 0, 0.5)),
+            //                         ),
+            //                         Text(
+            //                           '3',
+            //                           textAlign: TextAlign.center,
+            //                           style: TextStyle(
+            //                               fontWeight: FontWeight.bold,
+            //                               color: Color.fromRGBO(0, 0, 0, 0.5)),
+            //                         )
+            //                       ])
+            //                     ]),
+            //                     Container(
+            //                       child: Image.asset(
+            //                         'assets/images/vehicle.png',
+            //                         width: 100,
+            //                         height: 100,
+            //                       ),
+            //                     )
+            //                   ],
+            //                 ),
+            //               ],
+            //             ),
+            //           ),
+            //         ),
+            //       ),
+            //       Card(
+            //         color: Colors.white,
+            //         surfaceTintColor: Colors.white,
+            //         elevation: 2,
+            //         shadowColor: Colors.white,
+            //         child: Container(
+            //           height: 150,
+            //           width: 260,
+            //           child: Padding(
+            //             padding:
+            //                 const EdgeInsets.only(left: 15, right: 10, top: 15),
+            //             child: Column(
+            //               crossAxisAlignment: CrossAxisAlignment.start,
+            //               children: [
+            //                 Text(
+            //                   'Vehicles',
+            //                   style: TextStyle(
+            //                       fontSize: 18,
+            //                       fontWeight: FontWeight.bold,
+            //                       color: Color.fromRGBO(123, 30, 52, 1)),
+            //                 ),
+            //                 Row(
+            //                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //                   children: [
+            //                     Table(columnWidths: {
+            //                       0: FixedColumnWidth(90),
+            //                       1: FixedColumnWidth(40)
+            //                     }, children: [
+            //                       TableRow(children: [
+            //                         Text(
+            //                           'Total',
+            //                           textAlign: TextAlign.left,
+            //                           style: TextStyle(
+            //                               fontWeight: FontWeight.bold,
+            //                               color: Color.fromRGBO(0, 0, 0, 0.5)),
+            //                         ),
+            //                         Text(
+            //                           '4',
+            //                           textAlign: TextAlign.center,
+            //                           style: TextStyle(
+            //                               fontWeight: FontWeight.bold,
+            //                               color: Color.fromRGBO(0, 0, 0, 0.5)),
+            //                         )
+            //                       ]),
+            //                       TableRow(children: [
+            //                         Text(
+            //                           'Available',
+            //                           textAlign: TextAlign.left,
+            //                           style: TextStyle(
+            //                               fontWeight: FontWeight.bold,
+            //                               color: Color.fromRGBO(0, 0, 0, 0.5)),
+            //                         ),
+            //                         Text(
+            //                           '1',
+            //                           textAlign: TextAlign.center,
+            //                           style: TextStyle(
+            //                               fontWeight: FontWeight.bold,
+            //                               color: Color.fromRGBO(0, 0, 0, 0.5)),
+            //                         )
+            //                       ]),
+            //                       TableRow(children: [
+            //                         Text(
+            //                           'Booked',
+            //                           textAlign: TextAlign.left,
+            //                           style: TextStyle(
+            //                               fontWeight: FontWeight.bold,
+            //                               color: Color.fromRGBO(0, 0, 0, 0.5)),
+            //                         ),
+            //                         Text(
+            //                           '3',
+            //                           textAlign: TextAlign.center,
+            //                           style: TextStyle(
+            //                               fontWeight: FontWeight.bold,
+            //                               color: Color.fromRGBO(0, 0, 0, 0.5)),
+            //                         )
+            //                       ])
+            //                     ]),
+            //                     Container(
+            //                       child: Image.asset(
+            //                         'assets/images/vehicle.png',
+            //                         width: 100,
+            //                         height: 100,
+            //                       ),
+            //                     )
+            //                   ],
+            //                 ),
+            //               ],
+            //             ),
+            //           ),
+            //         ),
+            //       ),
+            //     ],
+            //   ),
+            // ),
+
+            //////end card ////////
+
             SizedBox(
               height: 160,
               child: ListView(scrollDirection: Axis.horizontal, children: [
@@ -740,6 +746,9 @@ class _VendorDashboardScreenState extends State<VendorDashboardScreen> {
             SizedBox(
               height: 20,
             ),
+
+////////////////// rental booking charts ////////////////////////////////////////////////
+
             Container(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
@@ -793,6 +802,9 @@ class _VendorDashboardScreenState extends State<VendorDashboardScreen> {
             SizedBox(
               height: 20,
             ),
+
+///////////////////////////// booking history table ///////////////////////////////////
+
             Container(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -1191,6 +1203,7 @@ class _VendorDashboardScreenState extends State<VendorDashboardScreen> {
         ),
       ),
 
+/////////////////////// Drawer /////////////////////////////////////////////////
       drawer: Drawer(
         backgroundColor: Color.fromRGBO(234, 233, 226, 1),
         width: 290.0,
@@ -1321,6 +1334,10 @@ class _VendorDashboardScreenState extends State<VendorDashboardScreen> {
                 ),
                 onTap: () {
                   Navigator.pop(context);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => CabAllocateScreen()));
                 },
               ),
               ListTile(

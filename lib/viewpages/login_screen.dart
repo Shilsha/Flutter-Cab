@@ -167,13 +167,41 @@ class _LoginScreenState extends State<LoginScreen> {
                                           BorderRadius.circular(11)))),
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(content: Text('Login secusess')));
-                          Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      VendorDashboardScreen()));
+                          print('object - ${email.text} && ${password.text}');
+                          if (email.text == 'ramkewal@gmail.com' &&
+                              password.text == '12345678') {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text('Login secusess')));
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        registration_screen()));
+                          } else if (email.text == 'vender@gmail.com' &&
+                              password.text == '12345678') {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text('Login secusess')));
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        VendorDashboardScreen()));
+                          } else {
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                backgroundColor: Colors.grey,
+                                content: Text(
+                                  'Enter Valid Credentials',
+                                  style: TextStyle(color: Colors.red),
+                                )));
+                          }
+
+                          // ScaffoldMessenger.of(context).showSnackBar(
+                          //     SnackBar(content: Text('Login secusess')));
+                          // Navigator.pushReplacement(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) =>
+                          //             VendorDashboardScreen()));
                         }
                       },
                       child: Text(
