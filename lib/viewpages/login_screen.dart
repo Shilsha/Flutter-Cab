@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_cab/registration_screen.dart';
 // import 'package:flutter_cab/viewpages/dashboard_sreen.dart';
 import 'package:flutter_cab/viewpages/forgot_screen.dart';
+import 'package:flutter_cab/viewpages/home_screen.dart';
 import 'package:flutter_cab/viewpages/vendor-side/vendor_dashboard.dart';
 // ignore: depend_on_referenced_packages
 import 'package:google_fonts/google_fonts.dart';
@@ -172,11 +173,10 @@ class _LoginScreenState extends State<LoginScreen> {
                               password.text == '12345678') {
                             ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(content: Text('Login secusess')));
-                            Navigator.pushReplacement(
+                            Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) =>
-                                        registration_screen()));
+                                    builder: (context) => home_screen()));
                           } else if (email.text == 'vender@gmail.com' &&
                               password.text == '12345678') {
                             ScaffoldMessenger.of(context).showSnackBar(
