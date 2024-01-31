@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_cab/splash_screen.dart';
+import 'package:flutter_cab/viewpages/home_screen.dart';
+import 'package:flutter_cab/viewpages/home_screen_1.dart';
+import 'package:flutter_cab/viewpages/one_way_trip.dart';
+import 'package:flutter_cab/viewpages/round_trip.dart';
 import 'package:flutter_cab/viewpages/splash_screen.dart';
+import 'package:geocoding/geocoding.dart' as geocoding;
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
