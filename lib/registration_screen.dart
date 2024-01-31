@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_cab/viewpages/home_screen.dart';
 import 'package:flutter_cab/viewpages/login_screen.dart';
 // import 'package:flutter_cab/home_screen.dart';
 
@@ -240,7 +241,7 @@ class _registration_screenState extends State<registration_screen> {
                           Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const LoginScreen()));
+                                  builder: (context) => const home_screen()));
                         }
                       },
                       child: Container(
